@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubernetes-python-basic-app-service
+spec:
+  selector:
+    app: kubernetes-python-basic-app
+  ports:
+    - protocol: TCP
+      port: 80
+      # port that the underlying application is listening on. Where the container needs to route traffic.
+      targetPort: 5001
+  type: NodePort
